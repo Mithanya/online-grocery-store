@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMart - Online Grocery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>FreshMart</h1>
+            <nav>
+                <ul>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#cart">Cart (<span id="cart-count">0</span>)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Filters Section -->
+    <section class="filters">
+        <div class="container">
+            <input type="text" id="search" placeholder="Search products..." onkeyup="filterProducts()">
+            <select id="category-filter" onchange="filterProducts()">
+                <option value="all">All Categories</option>
+                <option value="fruits">Fruits</option>
+                <option value="vegetables">Vegetables</option>
+                <option value="dairy">Dairy</option>
+                <option value="bakery">Bakery</option>
+                <option value="meat">Meat</option>
+                <option value="seafood">Seafood</option>
+            </select>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- Products will go here -->
+        <section id="products">
+            <h2>Our Products</h2>
+            <div id="products-grid" class="products-grid">
+                <!-- Products will be loaded by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Shopping Cart -->
+        <section id="cart">
+            <h2>Shopping Cart</h2>
+            <div id="cart-items">
+                <!-- Cart items will appear here -->
+            </div>
+            <div class="cart-total">
+                <h3>Total: $<span id="total-price">0.00</span></h3>
+                <button onclick="checkout()">Checkout</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
